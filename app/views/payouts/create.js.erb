@@ -1,0 +1,6 @@
+
+$('#change-tray').empty();
+
+<% @payout.each do |coin| %>
+	$('#change-tray').append("<li id=\"<%= dom_id(coin)%>\" class=\"coin\"><%= coin.name %> <br /> <%= coin.value %> &cent;</li>");
+<% end %>

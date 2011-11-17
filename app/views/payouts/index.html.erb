@@ -1,0 +1,44 @@
+<h2>Create change</h2>
+<!-- <p>Select the coin set you would like to use, or create one of your own. Set the value of money you would like to get the smallest amount of change for. If you find an incorrect outcome please notify my via the 'Wrong Outcome' button</p> -->
+
+<%= form_tag coin_set_payout_path, :id => 'coin-set-form', :remote => true do %>
+  <div id="coins-set" class="round shadow" >
+  	<%= label_tag :coin_set %>
+  	<% coin_sets = get_coin_sets %>
+  	<%= select_tag :coin_set, options_for_select(coin_sets) %>
+  	<%= link_to "Add Coin Set", new_coin_set_path %>
+	
+  	<ul id="coin-list">
+  	  <% coins = get_coins(coin_sets.first ? coin_sets.first[1] : 0)%>
+  	  <% coins.sort! {|a,b| a.value <=> b.value}%>
+  	  <%coins.each do |coin| %>
+  	    <li id="<%= dom_id(coin)%>" class="coin"><%= coin.name %> <br /> <%= coin.value %> &cent;</li>
+  	  <% end %>
+  	  <div class="clear"></div>
+  	</ul>
+  	<div class="clear"></div>
+  </div>
+<% end %>
+
+<%= form_tag payout_path, :id => 'change-form', :remote => true do %>
+	
+	<div id="money">
+		<%= label_tag :value, "Amount"%>
+		<%= text_field_tag :value %>&cent; ( e.g. 15&cent;)
+	</div>
+	<div>
+	  <% coin_sets = get_coin_sets %>
+	  <%= hidden_field_tag :coin_set_id, coin_sets.first ? coin_sets.first[1] : 0 %>
+
+	  <%= submit_tag "Make Change" %>
+	</div>
+	
+<% end %>
+
+
+<div class="round shadow change-box">
+	<ul id="change-tray">
+	  <li class="coin">This is where the change goes</li>
+	</ul>
+	<div class="clear"></div>
+</div>

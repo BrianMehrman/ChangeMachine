@@ -2,6 +2,149 @@
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require "reset"
  *= require_self
  *= require_tree . 
 */
+
+
+#container div {
+	margin:1em;
+	
+}
+
+h1 {
+	font-size:2em;
+}
+h2 {
+	font-size:1.5em;
+}
+h3 {
+	font-size:1.2em;
+}
+h4 {
+	font-size:1.1em;
+}
+
+table{
+	width:100%;
+}
+td {
+	text-align:center;
+}
+
+tr:nth-child(2n+1) {
+  background-color: #9f9f9f;
+}
+
+form {
+	margin-bottom:2em;
+}
+
+#container {
+	width:960px;
+	margin:0 auto;
+	background-color:#ddd;
+	padding-bottom: 10px;
+}
+
+#header {
+	background-color:#333;
+	min-height:40px;
+	padding:10px;
+}
+
+#nav {
+	background-color:#d6d6dc;
+	margin-bottom:2em;
+}
+
+#nav ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+
+#nav li {
+	float:left;
+}
+#nav a {
+	color:#aaa;
+	top:3px;
+	display:block;
+	width:60px;
+}
+
+.clear {
+	
+	clear:both;
+}
+
+.sub-text {
+	font-size:0.7em;
+	color:#999;
+}
+
+.round {
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px; /* future proofing */
+	-khtml-border-radius: 10px; /* for old Konqueror browsers */
+}
+.coin {
+	height:32px;
+	margin:20px;
+	padding:6px;
+	background-color:#d9d9df;
+	-moz-border-radius: 16px;
+	-webkit-border-radius: 16px;
+	border-radius: 16px; /* future proofing */
+	-khtml-border-radius: 16px; /* for old Konqueror browsers */
+	-webkit-box-shadow: 2px 2px 2px 3px rgba(60, 50, 50, 0.5);
+	-moz-box-shadow: 2px 2px 2px 3px rgba(60, 50, 50, 0.5);
+	box-shadow: 2px 2px 2px 3px rgba(60, 50, 50, 0.5);
+}
+
+#coins-set {
+	background-color:#dab0b0;
+	padding:1em;
+	-webkit-box-shadow: 0px 2px 8px 2px rgba(60, 60, 60, 0.5);
+	-moz-box-shadow: 0px 2px 8px 2px rgba(60, 60, 60, 0.5);
+	box-shadow: 0px 2px 8px 2px rgba(60, 60, 60, 0.5);
+}
+ #coin-list {
+	background-color:#d9d5d0;
+	padding:1em;
+	-webkit-box-shadow: inset 0px 2px 8px 2px rgba(60, 60, 60, 0.5);
+	-moz-box-shadow: inset 0px 2px 8px 2px rgba(60, 60, 60, 0.5);
+	box-shadow: inset 0px 2px 8px 2px rgba(60, 60, 60, 0.5);
+}
+.coin-set {
+	float:left;
+	margin:10px;
+}
+.coin-set, .change-box {
+	background-color:#afafaf;
+	min-height: 100px;
+	padding:10px;
+	-webkit-box-shadow: inset 0px -2px 6px 6px rgba(60, 60, 60, 0.5);
+	-moz-box-shadow: inset 0px -2px 6px 6px rgba(60, 60, 60, 0.5);
+	box-shadow: inset 0px -2px 6px 6px rgba(60, 60, 60, 0.5);
+}
+#change-tray li, #coin-list li {
+	text-align:center;
+	font-size:0.7em;
+	float:left;
+	width:auto;
+	
+	
+	/*background-color:#6f6f6f;
+	
+	-webkit-box-shadow: 0px 0px 3px 1px rgba(60, 60, 60, 0.5);
+	-moz-box-shadow: 0px 0px 3px 1px rgba(60, 60, 60, 0.5);
+	box-shadow: 0px 0px 3px 1px rgba(60, 60, 60, 0.5);*/
+}
+#change-tray {
+	
+	
+}

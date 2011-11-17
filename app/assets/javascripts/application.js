@@ -7,3 +7,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(function(){
+	$("#coin_set").change(function(){
+		$('#coin_set_id').val($('#coin_set option:selected').val())
+		$('#coin-set-form').submit();
+	});
+})

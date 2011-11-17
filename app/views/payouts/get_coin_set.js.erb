@@ -1,0 +1,8 @@
+
+$('#coin-list').empty();
+<% coins = @coin_set.coins %>
+<% coins.sort! {|a,b| a.value <=> b.value}%>
+<% coins.each do |coin| %>
+	$('#coin-list').append("<li id=\"<%= dom_id(coin)%>\" class=\"coin\"><%= coin.name %><br /><%= coin.value %> &cent;</li>");
+<% end %>
+$('#coin-list').append("<div class='clear'></div>")

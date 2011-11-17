@@ -1,4 +1,17 @@
 ChangeMachine::Application.routes.draw do
+  resource :payout
+  post "payouts/coin_set", :action=>"get_coin_set", :controller => "payouts", :as => "coin_set_payout"
+  resources :coins
+
+  resources :coin_sets do
+    # Collections are a 1-1 relationship to the coin_sets and to the coins
+    # but we will nest it here for now
+    resources :collections
+  end
+  
+
+  root :to => "payouts#index"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>ChangeMachine</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+	<head>
+	  <title>ChangeMachine</title>
+	  <%= stylesheet_link_tag    "application" %>
+	  <%= javascript_include_tag "application" %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		
+		<div id="container">
+			
+			
+			<header id="header">
+				<h1><%= link_to 'The Great Change Maker', root_path %></h1>
+			   <nav id="nav">
+   				<ul>
+   					 <% get_nav_links.each do |name,url| %>
+   						<li><%= link_to name, url %></li>
+   					<% end %>
+   				</ul>
+   				<div class="clear"></div>
+   			</nav>
+			<div class="clear"></div>
+			</header>
+			<!-- Notices and other Flash messages -->
+			<p id="notice"><%= notice %></p>
+			
+			<!-- View content -->
+			<div id="content">
+				<%= yield %>
+			</div>
+		
+		
+		</div>
+	</body>
 </html>

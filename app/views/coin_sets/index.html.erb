@@ -1,0 +1,24 @@
+<h1>Coin Sets</h1>
+
+<% @coin_sets.each do |coin_set| %>
+  
+  <div class="coin-set">  <%= coin_set.name %><br />
+	 <ul>
+	 	<% coin_set.coins.each do |coin| %>
+			<li >
+				<%= coin.name %> | <%= coin.value %><br />
+				<span class="sub-text"><%= time_ago_in_words(coin.updated_at.to_time) %></span>
+			</li>
+		<% end %>
+	 
+    <%= link_to 'Show', coin_set %>
+    <%= link_to 'Edit', edit_coin_set_path(coin_set) %>
+    <%= link_to 'Destroy', coin_set, confirm: 'Are you sure?', method: :delete %>
+  	 </ul>
+  </div>
+<% end %>
+
+<br />
+<div class="clear"></div>
+
+<%= link_to 'New Coin set', new_coin_set_path %>

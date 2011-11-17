@@ -1,0 +1,16 @@
+<%= form_tag coin_set_collections_path(@coin_set), :remote => true do %>
+  <%= render 'coin_errors' %>
+  <div class="field">
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name %>
+  </div>
+  
+  <div class="field">
+    <%= label_tag :value %><br />
+    <%= number_field_tag :value %>
+  </div>
+  
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>

@@ -1,0 +1,1 @@
+<li id="<%= dom_id(coin) %>"><div class='coin'><%= coin.name %> <br /> <%= coin.value %></div> <%= link_to "Toast", coin_set_collection_path(coin_set,get_collection(coin_set, coin)), :method => :delete, :remote => true %></li>

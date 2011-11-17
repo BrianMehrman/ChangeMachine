@@ -1,0 +1,14 @@
+
+<p>
+  <b>Value:</b>
+  <%= @coin.value %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @coin.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_coin_path(@coin) %> |
+<%= link_to 'Back', coins_path %>

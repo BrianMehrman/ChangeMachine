@@ -1,0 +1,19 @@
+<h1>Editing Coin Set: <%= @coin_set.name %></h1>
+
+<%= render 'form' %>
+
+<div class="field">
+  <h3>Coins</h3>
+  <ul id="coin-list">
+    <div id="thelist"><% @coin_set.coins.each do |coin| %>
+      <%= render 'coin', {:coin => coin, :coin_set => @coin_set} %>
+    <% end %></div>
+    <div class="clear"></div>
+  </ul>
+  <div id="add-coin">
+    <%= render 'add_coin' %>
+  </div>
+</div>
+
+<%= link_to 'Show', @coin_set %> |
+<%= link_to 'Back', coin_sets_path %>
